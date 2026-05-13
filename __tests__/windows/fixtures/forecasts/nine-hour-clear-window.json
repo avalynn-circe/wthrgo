@@ -1,0 +1,162 @@
+{
+  "description": "Single 9-hour qualifying window in clear conditions, satisfying consecutiveHoursRequired=9 (which maps to 3 intervals). All other intervals fail temperature or daytime check.",
+  "gaps": ["GAP-001"],
+  "requirements": ["WTH-040", "WTH-041", "WTH-135"],
+  "input": {
+    "forecast": {
+      "cityId": "test-msp",
+      "timezone": "America/Chicago",
+      "fetchedAt": 1715587200,
+      "days": [
+        {
+          "date": "2026-05-13",
+          "sunriseUtc": 1715597400,
+          "sunsetUtc": 1715648400,
+          "isPolarNight": false,
+          "highC": 24,
+          "lowC": 12,
+          "conditionCode": "clear"
+        }
+      ],
+      "intervals": [
+        {
+          "startsAt": 1715587200,
+          "endsAt": 1715598000,
+          "temperatureC": 8,
+          "feelsLikeC": 6,
+          "dewPointC": 4,
+          "windSpeedKmh": 5,
+          "windDirectionDeg": 180,
+          "precipitationMm": 0,
+          "precipitationType": "none",
+          "cloudCoverPct": 10,
+          "uvIndex": 0,
+          "visibilityKm": 20,
+          "conditionCode": "clear",
+          "sunriseUtc": 1715597400,
+          "sunsetUtc": 1715648400,
+          "isPolarNight": false
+        },
+        {
+          "startsAt": 1715598000,
+          "endsAt": 1715608800,
+          "temperatureC": 16,
+          "feelsLikeC": 16,
+          "dewPointC": 6,
+          "windSpeedKmh": 8,
+          "windDirectionDeg": 180,
+          "precipitationMm": 0,
+          "precipitationType": "none",
+          "cloudCoverPct": 10,
+          "uvIndex": 3,
+          "visibilityKm": 20,
+          "conditionCode": "clear",
+          "sunriseUtc": 1715597400,
+          "sunsetUtc": 1715648400,
+          "isPolarNight": false
+        },
+        {
+          "startsAt": 1715608800,
+          "endsAt": 1715619600,
+          "temperatureC": 21,
+          "feelsLikeC": 21,
+          "dewPointC": 8,
+          "windSpeedKmh": 10,
+          "windDirectionDeg": 180,
+          "precipitationMm": 0,
+          "precipitationType": "none",
+          "cloudCoverPct": 15,
+          "uvIndex": 6,
+          "visibilityKm": 20,
+          "conditionCode": "clear",
+          "sunriseUtc": 1715597400,
+          "sunsetUtc": 1715648400,
+          "isPolarNight": false
+        },
+        {
+          "startsAt": 1715619600,
+          "endsAt": 1715630400,
+          "temperatureC": 23,
+          "feelsLikeC": 23,
+          "dewPointC": 9,
+          "windSpeedKmh": 12,
+          "windDirectionDeg": 180,
+          "precipitationMm": 0,
+          "precipitationType": "none",
+          "cloudCoverPct": 20,
+          "uvIndex": 7,
+          "visibilityKm": 20,
+          "conditionCode": "clear",
+          "sunriseUtc": 1715597400,
+          "sunsetUtc": 1715648400,
+          "isPolarNight": false
+        },
+        {
+          "startsAt": 1715630400,
+          "endsAt": 1715641200,
+          "temperatureC": 22,
+          "feelsLikeC": 22,
+          "dewPointC": 10,
+          "windSpeedKmh": 11,
+          "windDirectionDeg": 180,
+          "precipitationMm": 0,
+          "precipitationType": "none",
+          "cloudCoverPct": 25,
+          "uvIndex": 5,
+          "visibilityKm": 20,
+          "conditionCode": "clear",
+          "sunriseUtc": 1715597400,
+          "sunsetUtc": 1715648400,
+          "isPolarNight": false
+        },
+        {
+          "startsAt": 1715641200,
+          "endsAt": 1715652000,
+          "temperatureC": 35,
+          "feelsLikeC": 35,
+          "dewPointC": 10,
+          "windSpeedKmh": 8,
+          "windDirectionDeg": 180,
+          "precipitationMm": 0,
+          "precipitationType": "none",
+          "cloudCoverPct": 30,
+          "uvIndex": 2,
+          "visibilityKm": 20,
+          "conditionCode": "clear",
+          "sunriseUtc": 1715597400,
+          "sunsetUtc": 1715648400,
+          "isPolarNight": false
+        }
+      ]
+    },
+    "activity": {
+      "id": "act-golf",
+      "name": "Golf",
+      "enabled": true,
+      "color": "#3b8c4d",
+      "criteria": {
+        "tempMinC": 10,
+        "tempMaxC": 27,
+        "dewPointMaxC": 18,
+        "windSpeedMaxKmh": 24,
+        "precipTolerance": "clear_only",
+        "timeOfDay": "any",
+        "consecutiveHoursRequired": 9
+      }
+    },
+    "now": "2024-05-13T06:00:00Z"
+  },
+  "expected": {
+    "windows": [
+      {
+        "activityId": "act-golf",
+        "startsAt": 1715598000,
+        "endsAt": 1715641200,
+        "intervalCount": 4,
+        "precedesRain": false,
+        "precedesDeterioration": false,
+        "followsRain": false
+      }
+    ]
+  }
+}
