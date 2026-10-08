@@ -1,6 +1,6 @@
 # wthrgo
 
-*Know when to go.*
+
 
 A mobile weather app that eliminates the calculation between weather data and personal activity planning. You define what conditions you need; wthrgo finds the windows, highlights them, monitors them, and tells you when something changes.
 
