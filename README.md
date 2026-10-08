@@ -112,4 +112,4 @@ All rights reserved.
 
 ---
 
-*wthrgo — Know when to go.*
+*wthrgo
